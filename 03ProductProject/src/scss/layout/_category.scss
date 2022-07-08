@@ -1,0 +1,19 @@
+#category {
+  background-color: #f9f9f9;
+  padding: 1rem 0;
+  li {
+    a {
+      font-size: 0.9rem;
+      color: $black-color;
+    }
+    &:last-child {
+      &::before {
+        content: "/";
+        margin: 0rem 1rem;
+      }
+      a {
+        color: $second-gray;
+      }
+    }
+  }
+}

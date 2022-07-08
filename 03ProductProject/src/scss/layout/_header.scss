@@ -1,0 +1,169 @@
+.header__top {
+  font-size: 0.8rem;
+  background-color: $light-gray;
+  border-bottom: 1px solid #e1e1e1;
+  padding: 1rem 0;
+
+  ul {
+    gap: 1rem;
+    li {
+      &:nth-child(2) {
+        border-left: 1px solid #cccbcb;
+        border-right: 1px solid #cccbcb;
+        padding: 0 1rem;
+      }
+      a {
+        color: $black-color;
+        display: flex;
+        align-items: center;
+        transition: all 0.2s linear;
+        i {
+          margin-left: 0.25rem;
+        }
+        &:hover {
+          color: $yellow-color;
+        }
+      }
+    }
+  }
+}
+
+.header__bottom {
+  padding: 2.5rem 0;
+  .header__bottom-right {
+    display: flex;
+    gap: 2.5rem;
+    .header__search {
+      border: 1px solid #cccbcb;
+      border-right: none;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      min-height: 2.8rem;
+      position: relative;
+      width: 500px;
+      padding-left: 1rem;
+      span {
+        font-size: 0.9rem;
+      }
+      .fa-angle-down {
+        font-size: 0.7rem;
+        margin-left: 0.3rem;
+      }
+      .search__text {
+        width: 370px;
+        input {
+          border: none;
+          width: 100%;
+          outline: none;
+          border-left: 1px solid #cccb;
+          padding: 0.3rem 1.3rem;
+          margin-left: 1.25rem;
+        }
+      }
+      .search__btn {
+        position: absolute;
+        right: 0;
+        top: 0px;
+        bottom: 0;
+        background: $yellow-color;
+        border-radius: 0 3px 3px 0;
+        display: flex;
+        transition: all 0.2s linear;
+        button {
+          width: 2.8rem;
+          border-radius: 3px;
+          border: none;
+          background: none;
+          cursor: pointer;
+          i {
+            font-size: 1rem;
+            transition: all 0.2s linear;
+          }
+        }
+        &:hover {
+          background-color: $black-color;
+        }
+        &:hover i {
+          color: white;
+        }
+      }
+    }
+    .header__heart {
+      border: 1px solid #e1e1e1;
+      width: 45px;
+      height: 45px;
+      text-align: center;
+      line-height: 44px;
+      font-size: 1.2rem;
+      transition: all 0.2s linear;
+      cursor: pointer;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        border-color: $yellow-color;
+        color: $yellow-color;
+        &::after {
+          color: $black-color;
+        }
+      }
+      &::after {
+        content: "5";
+        @extend .header_after;
+      }
+    }
+    .header__basket {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e80f0f;
+      color: #fff;
+      gap: 0.7rem;
+      position: relative;
+      &::after {
+        content: "12";
+        @extend .header_after;
+      }
+      .basket__bag {
+        font-size: 1.3rem;
+        border-right: 1px solid #fff;
+        i {
+          margin: 0rem 0.8rem;
+        }
+      }
+      .basket__price {
+        span {
+          font-weight: 600;
+        }
+        i {
+          font-size: 0.7rem;
+          margin: 0 0.8rem 0 0.4rem;
+        }
+      }
+    }
+  }
+}
+
+.navbar {
+  background-color: rgb(254, 215, 0);
+  padding: 1rem 0;
+  ul {
+    margin: 0;
+    a {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      margin-right: 2rem;
+      color: $black-color;
+      font-weight: 600;
+      transition: all 0.2s linear;
+      i {
+        margin-left: 0.5rem;
+      }
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

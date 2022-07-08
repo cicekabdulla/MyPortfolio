@@ -1,0 +1,39 @@
+$body-font: "Rubik", sans-serif;
+
+.header_after {
+  position: absolute;
+  left: -10px;
+  top: -10px;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.8rem;
+  background-color: $yellow-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $black-color;
+}
+
+.ratings {
+  i {
+    font-size: 0.6rem;
+    color: $second-gray;
+  }
+  .icon-color {
+    color: #ffc107;
+    font-weight: 900;
+  }
+  a {
+    color: #a5a5a5;
+    margin-left: 0.6rem;
+    transition: all 0.2s linear;
+    i {
+      font-size: 0.9rem;
+      margin-right: 0.2rem;
+    }
+    &:hover {
+      color: $yellow-color;
+    }
+  }
+}
