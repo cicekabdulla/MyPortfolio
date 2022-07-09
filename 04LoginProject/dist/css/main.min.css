@@ -1,0 +1,126 @@
+.container {
+  width: 20rem;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 16px;
+}
+
+#login {
+  font-family: sans-serif;
+  margin: 5rem 0;
+}
+
+#login h2 {
+  font-weight: 800;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+#login .login__img {
+  width: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto 3rem;
+  width: 6.8rem;
+  height: 6.8rem;
+}
+
+#login .login__img img {
+  width: 100%;
+  -webkit-box-shadow: 2px 3px 4px black;
+          box-shadow: 2px 3px 4px black;
+  border-radius: 50%;
+}
+
+#login form {
+  text-align: center;
+}
+
+#login form input {
+  width: 96%;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #b8b6b6;
+  margin-bottom: 2.2rem;
+  padding-bottom: 0.5rem;
+  color: #747272;
+}
+
+#login form input:focus {
+  border-bottom-color: forestgreen;
+}
+
+#login form button {
+  width: 100%;
+  background-color: forestgreen;
+  color: white;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 1.4rem;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+#login form button:hover {
+  background-color: #25a725;
+}
+
+#login ul {
+  margin-top: 6rem;
+  padding-left: 1rem;
+}
+
+#login ul li {
+  color: #747272;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+}
+
+#login ul li span {
+  margin-right: 0.3rem;
+}
+
+#login ul li a {
+  color: forestgreen;
+  text-decoration: none;
+  -webkit-transition: all 0.4s linear;
+  transition: all 0.4s linear;
+}
+
+#login ul li a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 1.4rem;
+  background-color: #ff7a7a;
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+}
+
+.success {
+  width: 100%;
+  padding: 0.8rem 0;
+  border-radius: 1.4rem;
+  background-color: #4bff69;
+  color: black;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+}
+/*# sourceMappingURL=main.min.css.map */
