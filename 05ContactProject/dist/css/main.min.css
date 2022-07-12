@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;500&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+html {
+  font-size: 16px;
+}
+
+.container {
+  width: 1170px;
+  margin: 0px auto;
+}
+
+body {
+  font-family: "Albert Sans", sans-serif;
+}
+
+.col-1 {
+  width: calc((100% / 12) * 1);
+}
+
+.col-2 {
+  width: calc((100% / 12) * 2);
+}
+
+.col-3 {
+  width: calc((100% / 12) * 3);
+}
+
+.col-4 {
+  width: calc((100% / 12) * 4);
+}
+
+.col-5 {
+  width: calc((100% / 12) * 5);
+}
+
+.col-6 {
+  width: calc((100% / 12) * 6);
+}
+
+.col-7 {
+  width: calc((100% / 12) * 7);
+}
+
+.col-8 {
+  width: calc((100% / 12) * 8);
+}
+
+.col-9 {
+  width: calc((100% / 12) * 9);
+}
+
+.col-10 {
+  width: calc((100% / 12) * 10);
+}
+
+.col-11 {
+  width: calc((100% / 12) * 11);
+}
+
+.col-12 {
+  width: calc((100% / 12) * 12);
+}
+
+.contact__form {
+  border-bottom: 2px solid #D0D0D0;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contact__form h1 {
+  font-size: 3rem;
+  font-weight: 500;
+}
+
+.contact__form form input {
+  width: 100%;
+  margin: .5rem 0 1rem 0;
+  padding: 0.7rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 1rem;
+  border-radius: .3rem;
+  border: 2px solid #D0D0D0;
+  outline: none;
+}
+
+.contact__form form input:focus {
+  border: 2px solid #00BFFF;
+  outline: none;
+}
+
+.contact__form form label {
+  font-weight: 500;
+  font-size: 1.2rem;
+}
+
+.contact__form form button {
+  width: 100%;
+  padding: 0.9rem;
+  background-color: #00BFFF;
+  border: none;
+  text-transform: uppercase;
+  color: white;
+  border-radius: .3rem;
+  outline: none;
+  cursor: pointer;
+}
+
+.contact__form form button:hover {
+  background-color: #0bb6ef;
+}
+
+.contact_message, .error, .success {
+  width: 100%;
+  padding: .8rem;
+  border-radius: .3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 20px;
+  margin-bottom: 1rem;
+}
+
+.error {
+  border: 2px solid red;
+}
+
+.success {
+  border: 2px solid green;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table thead th {
+  padding: 1rem 0;
+}
+
+table tbody td {
+  padding: 1.25rem 0;
+  border-top: 2px solid #D0D0D0;
+}
+
+table tr {
+  text-align: left;
+}
+
+table button {
+  background-color: transparent;
+  border-radius: 0.2rem;
+  font-size: 12px;
+  width: 52px;
+  height: 30px;
+  cursor: pointer;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+table button.btn_delete {
+  border: 2px solid red;
+  color: red;
+}
+
+table button.btn_delete:hover {
+  background-color: red;
+  color: white;
+}
+
+table button.btn_modify {
+  border: 2px solid green;
+  color: green;
+}
+
+table button.btn_modify:hover {
+  background-color: green;
+  color: white;
+}
+/*# sourceMappingURL=main.min.css.map */

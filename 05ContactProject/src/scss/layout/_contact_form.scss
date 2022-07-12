@@ -1,0 +1,68 @@
+.contact__form {
+    border-bottom: 2px solid $c-gray;
+    padding-bottom: 3rem;
+    margin-bottom: 3rem;
+
+    h1 {
+        font-size: 3rem;
+        font-weight: 500;
+    }
+
+    form {
+        input {
+            width: 100%;
+            margin: .5rem 0 1rem 0;
+            padding: 0.7rem;
+            box-sizing: border-box;
+            font-size: 1rem;
+            border-radius: .3rem;
+            border: 2px solid $c-gray;
+            outline: none;
+
+            &:focus {
+                border: 2px solid $c-blue;
+                outline: none;
+            }
+        }
+
+        label {
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.9rem;
+            background-color: $c-blue;
+            border: none;
+            text-transform: uppercase;
+            color: $c-white;
+            border-radius: .3rem;
+            outline: none;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $c-dblue;
+            }
+        }
+    }
+}
+
+.contact_message {
+    width: 100%;
+    padding: .8rem;
+    border-radius: .3rem;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 1rem;
+}
+
+.error {
+    @extend .contact_message;
+    border: 2px solid $c-red;
+}
+
+.success {
+    @extend .contact_message;
+    border: 2px solid $c-green;
+}

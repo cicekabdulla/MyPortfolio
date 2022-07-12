@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead {
+        th {
+            padding: 1rem 0;
+        }
+    }
+
+    tbody {
+        td {
+            padding: 1.25rem 0;
+            border-top: 2px solid $c-gray;
+        }
+    }
+
+    tr {
+        text-align: left;
+
+    }
+
+    button {
+        background-color: transparent;
+        border-radius: 0.2rem;
+        font-size: 12px;
+        width: 52px;
+        height: 30px;
+        cursor: pointer;
+        transition: all .2s linear;
+
+        &.btn_delete {
+            border: 2px solid $c-red;
+            color: $c-red;
+
+            &:hover {
+                background-color: $c-red;
+                color: $c-white;
+            }
+        }
+
+        &.btn_modify {
+            border: 2px solid $c-green;
+            color: $c-green;
+
+            &:hover {
+                background-color: $c-green;
+                color: $c-white;
+            }
+        }
+    }
+}
