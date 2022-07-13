@@ -157,6 +157,10 @@ table button {
   transition: all .2s linear;
 }
 
+table button i {
+  pointer-events: none;
+}
+
 table button.btn_delete {
   border: 2px solid red;
   color: red;

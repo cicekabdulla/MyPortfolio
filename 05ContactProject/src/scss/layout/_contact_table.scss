@@ -29,6 +29,10 @@ table {
         cursor: pointer;
         transition: all .2s linear;
 
+        i {
+            pointer-events: none;
+        }
+
         &.btn_delete {
             border: 2px solid $c-red;
             color: $c-red;
