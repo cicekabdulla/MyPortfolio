@@ -58,6 +58,7 @@ form.addEventListener('submit', (e) => {
     }
 
     if (!mod) {
+
         const tr = document.createElement('tr');
 
         tr.innerHTML = `
@@ -73,9 +74,25 @@ form.addEventListener('submit', (e) => {
                     fa-pen-to-square"></i></button></td>
           `
         tbody.appendChild(tr);
+
+
         statusMessage('success', 'Successfully!');
 
+        function setLS(value) {
+            let data = getLS();
+            data.push(value);
+
+            localStorage.setItem('object', JSON.stringify(data));
+        }
+
+
+        setLS(newPerson);
+
+        toTable(newPerson);
+
+
         resetInputs();
+
     } else if (mod) {
 
         mod.children[0].textContent = newPerson.name;
@@ -100,6 +117,7 @@ function resetInputs() {
 function controlInputs(newPerson) {
 
     let status = true;
+
     for (let key in newPerson) {
         if (newPerson[key] === '') {
             status = false;
@@ -118,3 +136,40 @@ function statusMessage(className, message) {
         div.remove();
     }, 3000)
 }
+
+function getLS() {
+    let arr;
+    if (localStorage.getItem('object') == null) {
+        arr = [];
+    } else {
+        arr = JSON.parse(localStorage.getItem('object'));
+    }
+
+    return arr;
+}
+
+
+function toTable(value) {
+    const tr = document.createElement('tr');
+
+    tr.textContent = value;
+
+    tr.innerHTML = `
+        
+    <td>${value.name}</td>
+    <td>${value.surname}</td>
+    <td>${value.email}</td>
+    <td> <button class="btn_delete"><i
+    class="fa-solid
+    fa-trash-can"></i></button>
+    <button class="btn_modify"><i
+    class="fa-solid
+    fa-pen-to-square"></i></button></td>
+    `
+    tbody.appendChild(tr);
+}
+
+const data = getLS();
+data.forEach(item => {
+    toTable(item);
+})
