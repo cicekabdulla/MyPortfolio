@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Albert+Sans:wght@200;300;400;500&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+html {
+  font-size: 16px;
+}
+
+.container {
+  width: 1170px;
+  margin: 0px auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Albert Sans", sans-serif;
+}
+
+.col-1 {
+  width: calc((100% / 12) * 1);
+}
+
+.col-2 {
+  width: calc((100% / 12) * 2);
+}
+
+.col-3 {
+  width: calc((100% / 12) * 3);
+}
+
+.col-4 {
+  width: calc((100% / 12) * 4);
+}
+
+.col-5 {
+  width: calc((100% / 12) * 5);
+}
+
+.col-6 {
+  width: calc((100% / 12) * 6);
+}
+
+.col-7 {
+  width: calc((100% / 12) * 7);
+}
+
+.col-8 {
+  width: calc((100% / 12) * 8);
+}
+
+.col-9 {
+  width: calc((100% / 12) * 9);
+}
+
+.col-10 {
+  width: calc((100% / 12) * 10);
+}
+
+.col-11 {
+  width: calc((100% / 12) * 11);
+}
+
+.col-12 {
+  width: calc((100% / 12) * 12);
+}
+
+.shopping__icon {
+  text-align: right;
+  margin: 2rem 0;
+}
+
+.shopping__icon a {
+  color: #504f4f;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.shopping__icon a i {
+  font-size: 2.5rem;
+}
+
+.shopping__icon a:hover {
+  color: black;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.card .card__img {
+  position: relative;
+}
+
+.card .card__img .add__cart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  background: #504f4f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 0;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.card .card__img .add__cart a {
+  color: white;
+  padding: 1rem 0;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  font-size: .9rem;
+}
+
+.card .card__img .add__cart:hover {
+  background-color: #000;
+}
+
+.card .card__img:hover .add__cart {
+  opacity: 1;
+}
+
+.card h4 {
+  margin: 1rem 0 .6rem 0;
+  color: #989898;
+}
+
+.card span {
+  font-weight: 700;
+}
+
+table {
+  width: 100%;
+}
+
+table tr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-bottom: 2px solid #c6c5c5;
+  padding-bottom: 1.2rem;
+}
+
+table tr td img {
+  width: 100px;
+  margin-right: 1.2rem;
+}
+
+table tr td div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+table tr td i {
+  border: 1px solid #989898;
+  border-radius: 50%;
+  padding: 7px;
+  height: 9px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 5rem;
+}
+/*# sourceMappingURL=main.min.css.map */

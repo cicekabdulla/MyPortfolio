@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+
+    tr {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        border-bottom: 2px solid #c6c5c5;
+        padding-bottom: 1.2rem;
+
+        td {
+            img {
+                width: 100px;
+                margin-right: 1.2rem;
+            }
+
+            div {
+                display: flex;
+                align-items: center;
+            }
+
+            i {
+                border: 1px solid #989898;
+                border-radius: 50%;
+                padding: 7px;
+                height: 9px;
+                display: flex !important;
+                align-items: center;
+                justify-content: center;
+                margin-left: 5rem;
+            }
+        }
+    }
+}
