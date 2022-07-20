@@ -1,5 +1,23 @@
 'use strict';
 
+const tbody = document.querySelector('tbody');
+
+tbody.addEventListener('click', e => {
+    e.preventDefault();
+
+    if (e.target.classList.contains('delete')) {
+
+        const tr = e.target.parentElement.parentElement.parentElement;
+        tr.remove();
+
+        const name = e.target.parentElement.parentElement.previousElementSibling.firstElementChild.lastElementChild.textContent;
+        deleteLS(name);
+
+        status(name);
+
+    }
+})
+
 function getLS() {
     let arr;
 
@@ -25,7 +43,7 @@ function toTable(value) {
     <td>
         <div>
             <span>${value.price}</span>
-            <i class="fa-solid fa-xmark"></i>
+            <i class="fa-solid fa-xmark delete"></i>
         </div>
     </td> 
     `
@@ -37,3 +55,39 @@ const data = getLS();
 data.forEach(item => {
     toTable(item)
 })
+
+//DELETE WITH FILTER
+// function deleteLS(val) {
+//     const arr = getLS();
+
+//     const newArr = arr.filter(item => item.name !== val)
+
+//     localStorage.setItem('products', JSON.stringify(newArr));
+
+//     // console.log(arr);
+//     // console.log(newArr);
+//     // console.log(val);
+// }
+
+
+//DELETE WITH SPLICE
+function deleteLS(value) {
+    let arr = getLS();
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].name == value) {
+            arr.splice(i, 1)
+        }
+    }
+    localStorage.setItem('products', JSON.stringify(arr));
+}
+
+function status(title) {
+    const mes = document.querySelector('.status');
+
+    mes.style.display = 'block';
+    mes.children[0].textContent = ` "${title}" has been deleted from your cart`
+
+    setTimeout(() => {
+        document.querySelector('.status').style.display = 'none'
+    }, 3000)
+}

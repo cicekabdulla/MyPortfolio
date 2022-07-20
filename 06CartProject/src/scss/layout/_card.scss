@@ -17,9 +17,34 @@
 
 }
 
+.status__message {
+    display: none;
+    align-items: center;
+    border: 2px dashed lightgray;
+
+    a {
+        background-color: black;
+        text-transform: uppercase;
+        display: inline-block;
+        width: 120px;
+        height: 40px;
+        color: white;
+        font-weight: 600;
+        font-size: .9rem;
+        text-align: center;
+        line-height: 2.5rem;
+        margin: 0 .6rem;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+
 .card {
     display: flex;
     justify-content: space-between;
+    margin-top: 1.5rem;
 
     .card__img {
         position: relative;

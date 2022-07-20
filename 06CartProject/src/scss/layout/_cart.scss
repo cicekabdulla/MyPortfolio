@@ -1,5 +1,15 @@
+.status {
+    display: none;
+    border: 2px dashed lightgray;
+
+    h1 {
+        font-size: 1.3rem;
+    }
+}
+
 table {
     width: 100%;
+    margin-top: 1.5rem;
 
     tr {
         display: flex;

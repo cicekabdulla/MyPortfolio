@@ -4,17 +4,17 @@
 // const addToCart = document.querySelectorAll('.add__cart');
 
 // addToCart.forEach(item => {
-//     item.addEventListener('click', (e) => {
+//     item.addEventListener('click', e => {
 //         e.preventDefault();
 
 //         const target = e.target.parentElement.parentElement;
 //         const img = target.children[0].getAttribute('src');
-//         const name = target.parentElement.children[1].textContent;
+//         const cardName = target.parentElement.children[1].textContent;
 //         const price = target.parentElement.children[2].textContent;
 
 //         const newProduct = {
 //             img: img,
-//             name: name,
+//             name: cardName,
 //             price: price
 //         }
 
@@ -40,8 +40,11 @@ for (let i = 0; i < addToCart.length; i++) {
         }
 
         setLS(newProduct);
-    });
+
+        statusMessage(newProduct.name);
+    })
 }
+
 
 function getLS() {
     let arr;
@@ -61,3 +64,16 @@ function setLS(value) {
 
     localStorage.setItem('products', JSON.stringify(data));
 }
+
+function statusMessage(title) {
+    const mes = document.querySelector('.status__message');
+
+    mes.style.display = 'flex';
+    mes.children[1].textContent = `"${title}" has been added to your cart`
+
+    setTimeout(() => {
+        document.querySelector('.status__message').style.display = 'none';
+    }, 3000)
+}
+
+
