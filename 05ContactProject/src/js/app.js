@@ -59,37 +59,11 @@ form.addEventListener('submit', (e) => {
 
     if (!mod) {
 
-        const tr = document.createElement('tr');
-
-        tr.innerHTML = `
-        
-        <td>${newPerson.name}</td>
-        <td>${newPerson.surname}</td>
-        <td>${newPerson.email}</td>
-        <td> <button class="btn_delete"><i
-                    class="fa-solid
-                    fa-trash-can"></i></button>
-            <button class="btn_modify"><i
-                    class="fa-solid
-                    fa-pen-to-square"></i></button></td>
-          `
-        tbody.appendChild(tr);
-
+        toTable(newPerson);
 
         statusMessage('success', 'Successfully!');
 
-        function setLS(value) {
-            let data = getLS();
-            data.push(value);
-
-            localStorage.setItem('object', JSON.stringify(data));
-        }
-
-
         setLS(newPerson);
-
-        toTable(newPerson);
-
 
         resetInputs();
 
@@ -135,6 +109,13 @@ function statusMessage(className, message) {
     setTimeout(() => {
         div.remove();
     }, 3000)
+}
+
+function setLS(value) {
+    let data = getLS();
+    data.push(value);
+
+    localStorage.setItem('object', JSON.stringify(data));
 }
 
 function getLS() {
