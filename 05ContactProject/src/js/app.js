@@ -13,11 +13,17 @@ const callElem = selector => document.querySelector(selector),
 
 let mod;
 
-tbody.addEventListener('click', (e) => {
+tbody.addEventListener('click', e => {
+    e.preventDefault();
+
     const tr = e.target.parentElement.parentElement;
 
     if (e.target.classList.contains('btn_delete')) {
         tr.remove();
+
+        const email = e.target.parentElement.previousElementSibling.textContent;
+        deleteLS(email)
+
     } else if (e.target.classList.contains('btn_modify')) {
         mod = tr;
 
@@ -32,7 +38,7 @@ tbody.addEventListener('click', (e) => {
 })
 
 
-form.addEventListener('submit', (e) => {
+form.addEventListener('submit', e => {
     e.preventDefault();
 
     const newPerson = {
@@ -51,7 +57,6 @@ form.addEventListener('submit', (e) => {
         }
     }
 
-
     if (!status) {
         statusMessage('error', 'Required failed');
         return;
@@ -68,6 +73,9 @@ form.addEventListener('submit', (e) => {
         resetInputs();
 
     } else if (mod) {
+
+        const oldPersonEmail = mod.children[2].textContent;
+        updateLS(oldPersonEmail, newPerson)
 
         mod.children[0].textContent = newPerson.name;
         mod.children[1].textContent = newPerson.surname;
@@ -130,16 +138,16 @@ function getLS() {
 }
 
 
-function toTable(value) {
+function toTable(newPerson) {
     const tr = document.createElement('tr');
 
-    tr.textContent = value;
+    tr.textContent = newPerson;
 
     tr.innerHTML = `
         
-    <td>${value.name}</td>
-    <td>${value.surname}</td>
-    <td>${value.email}</td>
+    <td>${newPerson.name}</td>
+    <td>${newPerson.surname}</td>
+    <td>${newPerson.email}</td>
     <td> <button class="btn_delete"><i
     class="fa-solid
     fa-trash-can"></i></button>
@@ -149,6 +157,30 @@ function toTable(value) {
     `
     tbody.appendChild(tr);
 }
+
+function updateLS(oldPersonEmail, newPerson) {
+    let arr = getLS();
+    arr.forEach(item => {
+        if (item.email == oldPersonEmail) {
+            item.name = newPerson.name;
+            item.surname = newPerson.surname;
+            item.email = newPerson.email;
+        }
+    })
+
+    localStorage.setItem('object', JSON.stringify(arr));
+}
+
+function deleteLS(email) {
+    let arr = getLS();
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].email== email) {
+            arr.splice(i, 1);
+        }
+    }
+    localStorage.setItem('object', JSON.stringify(arr));
+}
+
 
 const data = getLS();
 data.forEach(item => {

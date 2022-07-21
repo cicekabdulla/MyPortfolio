@@ -60,6 +60,7 @@ function getLS() {
 
 function setLS(value) {
     let data = getLS();
+
     data.push(value);
 
     localStorage.setItem('products', JSON.stringify(data));
