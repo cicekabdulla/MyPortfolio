@@ -41,21 +41,21 @@ tbody.addEventListener('click', e => {
 form.addEventListener('submit', e => {
     e.preventDefault();
 
-    const person = new newPerson(nameInput.value, surnameInput.value, emailInput.value);
+    const newPerson = new Person(nameInput.value, surnameInput.value, emailInput.value);
 
-    function newPerson(name, surname, email) {
+    function Person(name, surname, email) {
         this.name = name;
         this.surname = surname;
         this.email = email;
     }
-    
+
     // const newPerson = {
     //     name: nameInput.value,
     //     surname: surnameInput.value,
     //     email: emailInput.value
     // }
 
-    let status = controlInputs(person);
+    let status = controlInputs(newPerson);
 
     const children = contactMessage.children;
 
@@ -72,22 +72,22 @@ form.addEventListener('submit', e => {
 
     if (!mod) {
 
-        toTable(person);
+        toTable(newPerson);
 
         statusMessage('success', 'Successfully!');
 
-        setLS(person);
+        setLS(newPerson);
 
         resetInputs();
 
     } else if (mod) {
 
         const oldPersonEmail = mod.children[2].textContent;
-        updateLS(oldPersonEmail, person)
+        updateLS(oldPersonEmail, newPerson)
 
-        mod.children[0].textContent = person.name;
-        mod.children[1].textContent = person.surname;
-        mod.children[2].textContent = person.email;
+        mod.children[0].textContent = newPerson.name;
+        mod.children[1].textContent = newPerson.surname;
+        mod.children[2].textContent = newPerson.email;
         resetInputs();
 
         mod = null;
@@ -104,12 +104,12 @@ function resetInputs() {
     emailInput.value = '';
 }
 
-function controlInputs(person) {
+function controlInputs(newPerson) {
 
     let status = true;
 
-    for (let key in person) {
-        if (person[key] === '') {
+    for (let key in newPerson) {
+        if (newPerson[key] === '') {
             status = false;
         }
     }
@@ -146,16 +146,16 @@ function getLS() {
 }
 
 
-function toTable(person) {
+function toTable(newPerson) {
     const tr = document.createElement('tr');
 
-    tr.textContent = person;
+    tr.textContent = newPerson;
 
     tr.innerHTML = `
         
-    <td>${person.name}</td>
-    <td>${person.surname}</td>
-    <td>${person.email}</td>
+    <td>${newPerson.name}</td>
+    <td>${newPerson.surname}</td>
+    <td>${newPerson.email}</td>
     <td> <button class="btn_delete"><i
     class="fa-solid
     fa-trash-can"></i></button>
@@ -166,13 +166,13 @@ function toTable(person) {
     tbody.appendChild(tr);
 }
 
-function updateLS(oldPersonEmail, person) {
+function updateLS(oldPersonEmail, newPerson) {
     let arr = getLS();
     arr.forEach(item => {
         if (item.email == oldPersonEmail) {
-            item.name = person.name;
-            item.surname = person.surname;
-            item.email = person.email;
+            item.name = newPerson.name;
+            item.surname = newPerson.surname;
+            item.email = newPerson.email;
         }
     })
 
