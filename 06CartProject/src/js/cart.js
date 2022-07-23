@@ -42,6 +42,7 @@ function toTable(value) {
     </td>
     <td>
         <div>
+        <h6>${value.count}</h6>
             <span>${value.price}</span>
             <i class="fa-solid fa-xmark delete"></i>
         </div>

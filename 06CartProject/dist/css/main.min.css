@@ -237,6 +237,13 @@ table tr td i {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-left: 5rem;
+}
+
+table tr td span {
+  margin: 0 5rem;
+}
+
+table tr td h6 {
+  font-size: 1rem;
 }
 /*# sourceMappingURL=main.min.css.map */

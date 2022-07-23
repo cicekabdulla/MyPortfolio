@@ -36,11 +36,11 @@ for (let i = 0; i < addToCart.length; i++) {
         const newProduct = {
             img: img[i].getAttribute('src'),
             name: cardName[i].textContent,
-            price: span[i].textContent
+            price: span[i].textContent,
+            count: 1
         }
 
         setLS(newProduct);
-
         statusMessage(newProduct.name);
     })
 }
@@ -58,10 +58,14 @@ function getLS() {
     return arr;
 }
 
-function setLS(value) {
+function setLS(newProduct) {
     let data = getLS();
-
-    data.push(value);
+    let newData = data.find(item => item.name == newProduct.name);
+    if (!newData) {
+        data.push(newProduct)
+    } else {
+        newData.count++;
+    }
 
     localStorage.setItem('products', JSON.stringify(data));
 }
