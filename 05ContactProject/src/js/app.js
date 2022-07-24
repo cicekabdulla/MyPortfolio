@@ -13,6 +13,12 @@ const callElem = selector => document.querySelector(selector),
 
 let mod;
 
+function Person(name, surname, email) {
+    this.name = name;
+    this.surname = surname;
+    this.email = email;
+}
+
 tbody.addEventListener('click', e => {
     e.preventDefault();
 
@@ -42,18 +48,6 @@ form.addEventListener('submit', e => {
     e.preventDefault();
 
     const newPerson = new Person(nameInput.value, surnameInput.value, emailInput.value);
-
-    function Person(name, surname, email) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-    }
-
-    // const newPerson = {
-    //     name: nameInput.value,
-    //     surname: surnameInput.value,
-    //     email: emailInput.value
-    // }
 
     let status = controlInputs(newPerson);
 
