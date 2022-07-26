@@ -36,7 +36,7 @@ for (let i = 0; i < addToCart.length; i++) {
         const newProduct = {
             img: img[i].getAttribute('src'),
             name: cardName[i].textContent,
-            price: span[i].textContent,
+            price: span[i].textContent.replace(/\D/, ''),
             count: 1
         }
 
@@ -65,6 +65,7 @@ function setLS(newProduct) {
         data.push(newProduct)
     } else {
         newData.count++;
+        newData.price = newProduct.price * newData.count;
     }
 
     localStorage.setItem('products', JSON.stringify(data));
@@ -80,5 +81,4 @@ function statusMessage(title) {
         document.querySelector('.status__message').style.display = 'none';
     }, 3000)
 }
-
 
